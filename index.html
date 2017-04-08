@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todo">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDoList</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body ng-controller="list">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-route.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js" type="text/javascript"></script>
+    <script src="js/my.js" type="text/javascript"></script>
+
+    <div id = "page_wrapper">
+      <div id = "title_wrapper">
+        Todo List
+      </div>
+
+      <div id = "content_wrapper">
+
+        <div id = "tools_block">
+          <table>
+            <tr>
+              <td>
+                <div id = "add_item_block">
+                  TODO: <br/>
+                  <input type="text"  maxlength="42" ng-model='add_text'/>
+                  <button ng-click="add()">Add Item</button>
+                </div>
+              </td>
+              <td>
+                <div id = "search_item_block">
+                  Item Search: <br/>
+                  <input type="text" ng-model="search" />
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div id = "tabs_wrapper">
+          <table id = "tabs_block" >
+            <tr>
+              <th><div id = "all_item_tab" class = "tab" ng-click="change(1)"> All things </div></th>
+              <th><div id = "active_item_tab" class = "tab" ng-click="change(2)"> ToDo </div></th>
+              <th><div id = "complete_item_tab" class = "tab" ng-click="change(3)"> Completed </div></th>
+            </tr>
+          </table>
+        </div>
+
+        <div id = "all_list_wrapper" class = "list_wrapper" ng-show="showpage==1" >
+          <div id = "all_list_block" class = "list_block">
+              <div class = "list_item">
+                <div class = "item_col detail_title"> Details </div>
+                <div class = "item_col stat_title"> Status </div>
+              </div>
+              <hr>
+              <div class = "list_item" ng-repeat="list in lists|filter:search">
+                <div class = "item_col delete_col" ng-click="delete(list)"></div>
+                <div class = "item_col detail_col"> {{list.cont}} </div>
+                <div class = "item_col stat_col"> {{list.sta}} </div>
+              </div>
+          </div>
+        </div>
+
+        <div id = "active_list_wrapper" class = "list_wrapper" ng-show="showpage==2" >
+          <div id = "active_list_block" class = "list_block">
+              <div class = "list_item">
+                <div class = "item_col detail_title"> Details </div>
+                <div class = "item_col stat_title"> Status </div>
+              </div>
+              <hr>
+              <div class = "list_item" ng-repeat="list in lists|filter:{sta:'Active'}|filter:search">
+                <div class = "item_col delete_col" ng-click="delete(list)"></div>
+                <div class = "item_col detail_col"> {{list.cont}} </div>
+                <div class = "item_col stat_col"> {{list.sta}} </div>
+                <div class = "item_col"> <button ng-click="complete(list)">Done!</button> </div>
+              </div>
+          </div>
+        </div>
+
+        <div id = "complete_list_wrapper" class = "list_wrapper" ng-show="showpage==3" >
+          <div id = "complete_list_block" class = "list_block">
+              <div class = "list_item">
+                <div class = "item_col detail_title"> Details </div>
+                <div class = "item_col stat_title"> Status </div>
+              </div>
+              <hr>
+              <div class = "list_item" ng-repeat="list in lists|filter:{sta:'Complete'}|filter:search">
+                <div class = "item_col delete_col" ng-click="delete(list)"></div>
+                <div class = "item_col detail_col"> {{list.cont}} </div>
+                <div class = "item_col stat_col"> {{list.sta}} </div>
+              </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+</body>
+</html>
