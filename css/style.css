@@ -6,7 +6,7 @@ body {
 
 }
 
-#page_wrapper {
+#page {
     position: relative;
     top:20px;
     margin-top:25px;
@@ -22,7 +22,7 @@ body {
     opacity: 0.7;
 }
 
-#title_wrapper{
+#title{
     position: relative;
     height:50px;
     padding:10px;
@@ -37,7 +37,7 @@ body {
     border-top-right-radius:20px;
 }
 
-#tools_block{
+#tools{
     height:50px;
     padding:10px;
     margin:10px;
@@ -47,23 +47,23 @@ body {
 
 }
 
-#tools_block td{
+#tools td{
     width:290px;
 }
 
-#tabs_wrapper{
+#tabs{
     position: relative;
     height: 30px;
 }
 
-#tabs_block{
+#tabs_table{
     position: relative;
     width:100px;
     height: 30px;
     margin-left:7px;
 }
 
-#content_wrapper{
+#content{
     position: relative;
     height:820px;
     background-color: rgb(2,180,253);
@@ -72,29 +72,29 @@ body {
 }
 
 
-#all_item_tab{
+#all{
     background-color: rgb(155,228,253);
 }
 
-#active_item_tab{
+#active{
     background-color: rgb(247,242,70);
 }
 
-#complete_item_tab{
+#complete{
     background-color: rgb(70,255,163);
 }
 
-#all_list_wrapper{
+#all_page{
     background-color: rgb(155,228,253);
 
 }
 
-#active_list_wrapper{
+#active_page{
     background-color: rgb(247,242,70);
 
 }
 
-#complete_list_wrapper{
+#complete_page{
     background-color: rgb(70,255,163);
 
 }
@@ -118,7 +118,7 @@ body {
     display: table-cell;
 }
 
-.list_wrapper{
+.list_page{
     position: absolute;
     top:110px;
     width:581px;
@@ -133,7 +133,7 @@ body {
     border-bottom-right-radius: 15px;
 }
 
-.list_block{
+.list_div{
     position: absolute;
     left: 20px;
     top: 15px;
